@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+
+    <!--metadata para PWA -->
+    <!--modificar color la barra de estado para android -->
+    <meta name="theme-color" content="#333a70">
+    <!-- Optimizacion del lado del SEO -->
+    <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <!-- modificar barra de estado en dispositvo de IOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+
+    <!-- icon -->
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="./img/favicon.png" />
+    <link rel="apple-touch-startup-icon" href="./img/favicon.png" />
+
+    <!-- manifest -->
+    <link rel="manifest" href="./manifest.json" />
+    <!--fin de PWA -->
+
+    <meta name="description" content="Generador de degradados Css en tiempo Real con Vue">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://unpkg.com/vue@next"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <section>
+            <h1>Propiedades Degradados</h1>
+            <h2>{{title}}</h2>
+
+        </section>
+
+
+        <form>
+            <label> Color 1:<input type="color" v-model="fcolor"></label>
+            <label> Color 2:<input type="color" v-model="scolor"></label>
+        </form>
+        <p> HEX 1: {{fcolor}}</p>
+        <p> HEX 2: {{scolor}}</p>
+        <hr>
+
+        <form>
+            <label>
+                <input type="text" class="value-css" value="setColor" />
+            </label>
+            <br>
+            <label>
+                <input type="radio" value="1" v-model.number="orientation">Right
+            </label>
+            <label>
+                <input type="radio" value="2" v-model.number="orientation">Left
+            </label>
+            <label>
+                <input type="radio" value="3" v-model.number="orientation">Top.
+            </label>
+            <label>
+                <input type="radio" value="4" v-model.number="orientation">Bottom
+            </label>
+            <label>
+                <input type="radio" value="5" v-model.number="orientation">combined
+            </label>
+
+            <div class="area" :style="setColor"></div>
+        </form>
+
+
+
+    </div>
+    <footer>
+        <h3>Canver</h3>
+    </footer>
+
+    <script src="./js/load.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/mountApp.js"></script>
+</body>
+
+</html>
